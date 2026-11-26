@@ -1,0 +1,11 @@
+{
+  "name": "houjin-bangou-tools",
+  "version": "0.1.0",
+  "description": "法人番号の全件データを取得し、都道府県×法人種別×指定年月を集計、可視化と通知文を作る",
+  "datasets_out": ["houjin_zenkoku"],
+  "steps": {
+    "collect": "python3 houjin_collect.py {ax}/data/sources/houjin",
+    "analyze": "python3 houjin_aggregate.py {ax}/data/sources/houjin/00_zenkoku_all_*.csv {ax}/derived/houjin_monthly_formations.csv",
+    "report": "python3 houjin_report.py {ax}/derived/houjin_monthly_formations.csv {ax}/derived/houjin_report.html {ax}/derived/houjin_notify.txt"
+  }
+}

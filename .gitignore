@@ -1,0 +1,6 @@
+__pycache__/
+*.zip
+00_zenkoku_all_*.csv
+houjin_monthly_formations.csv
+houjin_report.html
+houjin_notify.txt
